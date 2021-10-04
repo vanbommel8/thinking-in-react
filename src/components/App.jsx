@@ -9,8 +9,8 @@ function App() {
   return (
     <div id="page-wrap">
       <Navigation />
-      
-      <Header />
+
+      <Header title="created by Michele" />
       <About />
       <Books />
       <Footer />
