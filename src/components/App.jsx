@@ -13,22 +13,37 @@ del UL chiamato "nav.pills". La struttura dovrà essere la seguente "
       </li> */
 }
 
-import React from 'react'
+import React, { useState } from 'react'
 import Navigation from './Navigation'
 import Header from './Header'
 import Books from './Books'
 import About from './About'
 import Footer from './Footer'
+import Menu from './Menu'
 
 const navBooks = ['All', 'Design', 'Mobile', 'DevOps', 'Essentials']
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
     <div id="page-wrap">
-      <Navigation />
-      <Header title="Welcome to React" date={new Date().toLocaleDateString()} />
+
+      {isMenuOpen && <Menu toggleMenu={toggleMenu} />}
+      <Navigation toggleMenu={toggleMenu} />
+
+      <Header
+        title="Welcome to React"
+        date={new Date().toLocaleDateString()} />
+
       <Books navBooks={navBooks} />
+
       <About />
+
       <Footer />
     </div>
   )

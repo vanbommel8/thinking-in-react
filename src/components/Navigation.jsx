@@ -10,8 +10,8 @@ const Navigation = (props) => (
       </div>
       <ul className="nav navbar-nav pull-right">
         <li>
-          <button className="btn btn-lg btn-outline">
-            <i className="fa fa-graduation-cap" /> <span>Training</span>
+          <button className="btn btn-lg btn-outline" onClick={props.toggleMenu}>
+            <i className="fa fa-graduation-cap" /> <span>Menu</span>
           </button>
         </li>
       </ul>
