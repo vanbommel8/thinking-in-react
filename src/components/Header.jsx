@@ -12,6 +12,7 @@ const Header = (props) => (
           />
           <div className="intro-text">
             <span className="skills">{props.title}</span>
+            <div className="date">Oggi è il {props.date}</div>
           </div>
         </div>
       </div>
