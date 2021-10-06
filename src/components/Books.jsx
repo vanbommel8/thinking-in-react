@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import books from '../mocks/books'
 
-
 function Books() {
   const filters = ['All', 'Design', 'Mobile', 'DevOps', 'Essentials']
 
