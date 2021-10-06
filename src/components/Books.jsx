@@ -4,7 +4,7 @@ import books from '../mocks/books'
 function Books() {
   const filters = ['All', 'Design', 'Mobile', 'DevOps', 'Essentials']
 
-  const [selectedBooks, setBooks] = useState(books)
+  const [selectedBooks, setBooks] = useState([])
   const [selectedCategory, setSelectedCategory] = useState('All')
 
   function setFilter(filter) {
