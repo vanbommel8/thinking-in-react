@@ -20,6 +20,7 @@ import Books from './Books'
 import About from './About'
 import Footer from './Footer'
 import Menu from './Menu'
+import books from '../mocks/books'
 
 const navBooks = ['All', 'Design', 'Mobile', 'DevOps', 'Essentials']
 
