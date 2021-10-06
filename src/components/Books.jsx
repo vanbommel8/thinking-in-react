@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import books from '../mocks/books'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import filterBooks from '../mocks/books'
 
 function Books() {
   const filters = ['All', 'Design', 'Mobile', 'DevOps', 'Essentials']
@@ -7,10 +8,18 @@ function Books() {
   const [selectedBooks, setBooks] = useState([])
   const [selectedCategory, setSelectedCategory] = useState('All')
 
+  useEffect(() => {
+    async function fetchBooks() {
+      const result = await axios.get('http://localhost:9000/books')
+      return result
+    }
+    fetchBooks().then((response) => setBooks(response.data))
+  }, [])
+
   function setFilter(filter) {
     setSelectedCategory(filter)
 
-    const filteredBooks = books.filter(function (book) {
+    const filteredBooks = filterBooks.filter(function (book) {
       if (filter === 'All') return book.category
       return book.category === filter
     })
